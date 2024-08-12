@@ -3,10 +3,8 @@ import { Prisma } from "@prisma/client"
 import { Avatar, AvatarImage } from "./ui/avatar"
 import { Badge } from "./ui/badge"
 import { Card, CardContent } from "./ui/card"
-import { useState } from "react"
 import { format, isFuture } from "date-fns"
-import { deleteBooking } from "../_actions/delete-booking"
-import { toast } from "sonner"
+import { ptBR } from "date-fns/locale"
 import {
   Sheet,
   SheetClose,
@@ -16,13 +14,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet"
-import { ptBR } from "date-fns/locale"
 import Image from "next/image"
 import PhoneItem from "./phone-item"
 import { Button } from "./ui/button"
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -30,6 +26,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog"
+import { DialogClose } from "@radix-ui/react-dialog"
+import { deleteBooking } from "../_actions/delete-booking"
+import { toast } from "sonner"
+import { useState } from "react"
 
 interface BookingItemProps {
   booking: Prisma.BookingGetPayload<{
