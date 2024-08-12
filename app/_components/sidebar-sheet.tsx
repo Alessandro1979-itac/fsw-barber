@@ -14,8 +14,6 @@ const SidebarSheet = () => {
   const { data } = useSession()
   const handleLogoutClick = () => signOut()
 
-  console.log(data?.user)
-
   return (
     <SheetContent className="overflow-y-auto">
       <SheetHeader>
@@ -61,8 +59,10 @@ const SidebarSheet = () => {
           </Button>
         </SheetClose>
         <Button className="justify-start gap-2" variant="ghost">
-          <CalendarIcon size={18} />
-          Agendamentos
+          <Link href="/bookings">
+            <CalendarIcon size={18} />
+            Agendamentos
+          </Link>
         </Button>
       </div>
 
