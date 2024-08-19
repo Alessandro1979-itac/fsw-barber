@@ -18,7 +18,6 @@ export const authOptions: AuthOptions = {
         ...session.user,
         id: user.id,
       } as any
-
       return session
     },
   },

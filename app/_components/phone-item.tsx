@@ -1,7 +1,8 @@
 "use client"
+
 import { SmartphoneIcon } from "lucide-react"
-import { toast } from "sonner"
 import { Button } from "./ui/button"
+import { toast } from "sonner"
 
 interface PhoneItemProps {
   phone: string
@@ -20,7 +21,6 @@ const PhoneItem = ({ phone }: PhoneItemProps) => {
         <SmartphoneIcon />
         <p className="text-sm">{phone}</p>
       </div>
-
       {/* DIREITA */}
       <Button
         variant="outline"

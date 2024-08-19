@@ -1,4 +1,5 @@
 "use client"
+
 import { Prisma } from "@prisma/client"
 import { Avatar, AvatarImage } from "./ui/avatar"
 import { Badge } from "./ui/badge"
@@ -64,7 +65,6 @@ const BookingItem = ({ booking }: BookingItemProps) => {
   const handleSheetOpenChange = (isOpen: boolean) => {
     setIsSheetOpen(isOpen)
   }
-
   return (
     <Sheet open={isSheetOpen} onOpenChange={handleSheetOpenChange}>
       <SheetTrigger className="w-full min-w-[90%]">
@@ -87,7 +87,6 @@ const BookingItem = ({ booking }: BookingItemProps) => {
                 <p className="text-sm">{booking.service.barbershop.name}</p>
               </div>
             </div>
-
             {/* DIREITA */}
             <div className="flex flex-col items-center justify-center border-l-2 border-solid px-5">
               <p className="text-sm capitalize">
@@ -103,7 +102,6 @@ const BookingItem = ({ booking }: BookingItemProps) => {
           </CardContent>
         </Card>
       </SheetTrigger>
-
       <SheetContent className="w-[85%]">
         <SheetHeader>
           <SheetTitle className="text-left">Informações da Reserva</SheetTitle>
@@ -122,7 +120,6 @@ const BookingItem = ({ booking }: BookingItemProps) => {
               <Avatar>
                 <AvatarImage src={barbershop.imageUrl} />
               </Avatar>
-
               <div>
                 <h3 className="font-bold">{barbershop.name}</h3>
                 <p className="text-xs">{barbershop.address}</p>
@@ -153,7 +150,6 @@ const BookingItem = ({ booking }: BookingItemProps) => {
             ))}
           </div>
         </div>
-
         <SheetFooter className="mt-6">
           <div className="flex items-center gap-3">
             <SheetClose asChild>
@@ -168,7 +164,6 @@ const BookingItem = ({ booking }: BookingItemProps) => {
                     Cancelar Reserva
                   </Button>
                 </DialogTrigger>
-
                 <DialogContent className="w-[90%]">
                   <DialogHeader>
                     <DialogTitle>Você deseja cancelar sua reserva?</DialogTitle>
@@ -177,14 +172,12 @@ const BookingItem = ({ booking }: BookingItemProps) => {
                       recuperá-la. Essa ação é irreversível.
                     </DialogDescription>
                   </DialogHeader>
-
                   <DialogFooter className="flex flex-row gap-3">
                     <DialogClose asChild>
                       <Button variant="secondary" className="w-full">
                         Voltar
                       </Button>
                     </DialogClose>
-
                     <DialogClose className="w-full">
                       <Button
                         variant="destructive"
